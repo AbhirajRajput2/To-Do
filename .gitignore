@@ -1,0 +1,38 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Optional:
+.DS_Store         # macOS
+Thumbs.db         # Windows
+.env.local        # other envs if any
+
+# IDE folders
+.vscode/
+.idea/
+
+# Coverage reports
+coverage/
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Output of npm pack
+*.tgz
+
+# Optional lock files (choose one if needed)
+package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
