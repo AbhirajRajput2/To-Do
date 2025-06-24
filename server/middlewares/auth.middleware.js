@@ -6,19 +6,15 @@ export const isAuthenticated = async(req,res,next)=>{
         const token = req.cookies.token;
 
         if(!token){
-            return res.json(401).json({
-                message:"User isn't login Unauthorized",
-                success:false,
-            });
+            req.user=null;
+            return next();
         }
         const decoded = jwt.verify(token,process.env.JWT_SECRET);
         
         const user =await UserModel.findOne(decoded._id).select("-password");
         if (!user) {
-             return res.status(404).json({ 
-                message: "User not found",
-                 success: false 
-                });
+             req.user = null;
+             return next();
         }
 
         req.user = user;
